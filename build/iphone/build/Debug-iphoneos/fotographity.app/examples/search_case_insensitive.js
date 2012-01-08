@@ -1,0 +1,1 @@
+/Users/glenn/Dropbox/Titanium/fotographity/Resources/examples/search_case_insensitive.js

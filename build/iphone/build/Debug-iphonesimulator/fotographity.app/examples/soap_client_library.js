@@ -1,0 +1,1 @@
+/Users/glenn/Dropbox/Titanium/fotographity/Resources/examples/soap_client_library.js

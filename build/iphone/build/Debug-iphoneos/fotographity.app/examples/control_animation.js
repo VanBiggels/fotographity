@@ -1,0 +1,1 @@
+/Users/glenn/Dropbox/Titanium/fotographity/Resources/examples/control_animation.js

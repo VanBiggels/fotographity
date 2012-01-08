@@ -1,0 +1,1 @@
+/Users/glenn/Dropbox/Titanium/fotographity/Resources/examples/picker_custom2.js

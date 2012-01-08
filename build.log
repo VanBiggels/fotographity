@@ -1,0 +1,11 @@
+Logfile initialized
+[INFO] logfile = /Users/glenn/Dropbox/Titanium/fotographity/build.log
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.8.0.1/android/builder.py emulator fotographity /Users/glenn/Documents/Android SDK /Users/glenn/Dropbox/Titanium/fotographity com.fotographity 12 HVGA
+[INFO] Launching Android emulator...one moment
+[DEBUG] From: /Users/glenn/Documents/Android SDK/tools/emulator
+[DEBUG] SDCard: /Users/glenn/.titanium/android2.sdcard
+[DEBUG] AVD ID: 12
+[DEBUG] AVD Skin: HVGA
+[DEBUG] SDK: /Users/glenn/Documents/Android SDK
+[DEBUG] /Users/glenn/Documents/Android SDK/tools/emulator -avd titanium_12_HVGA -port 5560 -sdcard /Users/glenn/.titanium/titanium_12_HVGA.sdcard -logcat *:d,* -no-boot-anim -partition-size 128
+[INFO] Android Emulator has exited
