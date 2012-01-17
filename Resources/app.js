@@ -33,8 +33,14 @@ win_tab_list_overview.add(label_tab_list_overview);
 //
 // create base UI tab and root window
 //
+
+
+
+
 var win_tab_foto_new = Titanium.UI.createWindow({  
     title:'Camera',
+    url:'camera_basic.js',
+	titleid:'mashups_win_title',
     backgroundColor:'#fff'
 });
 var tab_foto_new = Titanium.UI.createTab({  
@@ -43,21 +49,15 @@ var tab_foto_new = Titanium.UI.createTab({
     window:win_tab_foto_new
 });
 
-var label_tab_foto_new = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am new pic',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
 
-win_tab_foto_new.add(label_tab_foto_new);
 
 //
 // create base UI tab and root window
 //
 var win_tab_geo_overview = Titanium.UI.createWindow({  
     title:'tab_geo_overview',
+       title:'Geo Overview',
+    url:'/Resources/drupal.js',
     backgroundColor:'#fff'
 });
 var tab_geo_overview = Titanium.UI.createTab({  
@@ -66,15 +66,6 @@ var tab_geo_overview = Titanium.UI.createTab({
     window:win_tab_geo_overview
 });
 
-var label_tab_geo_overview = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am tab_geo_overview',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
-});
-
-win_tab_geo_overview.add(label_tab_geo_overview);
 //
 // create base UI tab and root window
 //
@@ -106,7 +97,8 @@ win_tab_settings.add(label_tab_settings);
 
 
 var win5 = Titanium.UI.createWindow({
-	url:'camera_basic.js',
+	// url:'camera_basic.js',
+	url:'/windows/TwitterWindow.js',
 	titleid:'mashups_win_title'
 });
 var tab5 = Titanium.UI.createTab({
@@ -124,6 +116,8 @@ tabGroup.addTab(tab_foto_new);
 tabGroup.addTab(tab_geo_overview);  
 tabGroup.addTab(tab_settings); 
 tabGroup.addTab(tab5); 
+
+
 
 // open tab group
 tabGroup.open();
