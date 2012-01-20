@@ -13,7 +13,7 @@ var tabGroup = Titanium.UI.createTabGroup();
 var win_tab_list_overview = Titanium.UI.createWindow({  
     title:'Camera',
     // url:'map.js',
-     url:'drupal.js',
+     url:'camera.js',
 	titleid:'mashups_win_title',
     backgroundColor:'#fff'
 });
