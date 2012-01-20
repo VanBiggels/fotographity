@@ -1,4 +1,22 @@
 var win = Titanium.UI.currentWindow;
+
+
+
+// Back Button
+var backBtn = Titanium.UI.createButton({
+   title:'Back',
+   style:Titanium.UI.iPhone.SystemButtonStyle.BORDERED
+});
+ 
+backBtn.addEventListener( 'click', function() {
+    webview.goBack();
+});
+ 
+Ti.UI.currentWindow.setLeftNavButton(backBtn);
+
+
+
+
 Titanium.Media.showCamera({
 
 	success:function(event)
