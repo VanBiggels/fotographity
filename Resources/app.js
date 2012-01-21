@@ -1,5 +1,6 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
+Titanium.UI.setBackgroundImage('graphics/bg.png');
+Titanium.UI.setBackgroundColor('transparent');
 
 // create tab group
 var tabGroup = Titanium.UI.createTabGroup();
@@ -11,15 +12,17 @@ var tabGroup = Titanium.UI.createTabGroup();
 // create base UI tab and root window
 //
 var win_tab_list_overview = Titanium.UI.createWindow({  
-    title:'Camera',
+    title:'Graphs',
     // url:'map.js',
-     url:'camera.js',
-	titleid:'mashups_win_title',
-    backgroundColor:'#fff'
+     url:'drupalFeed.js',
+     color: '#fff',
+     backgroundImage:'graphics/bg.png' ,
+	titleid:'mashups_win_title'
 });
 var tab_list_overview = Titanium.UI.createTab({  
-    icon:'icons/KS_chat.png',
+    icon:'icons/chat.png',
     title:'Topics',
+    
     window:win_tab_list_overview
 });
 
@@ -31,13 +34,14 @@ var tab_list_overview = Titanium.UI.createTab({
 
 
 var win_tab_foto_new = Titanium.UI.createWindow({  
-    title:'Camera',
+    title:'New Topic',
     url:'camera.js',
+    color: '#fff',
 	titleid:'mashups_win_title',
-    backgroundColor:'#fff'
+    layout:'vertical'
 });
 var tab_foto_new = Titanium.UI.createTab({  
-    icon:'icons/KS_camera.png',
+    icon:'icons/camera.png',
     title:'Share',
     window:win_tab_foto_new
 });
@@ -48,13 +52,11 @@ var tab_foto_new = Titanium.UI.createTab({
 // create base UI tab and root window
 //
 var win_tab_geo_overview = Titanium.UI.createWindow({  
-      title:'Camera',
-    url:'map.js',
-	titleid:'mashups_win_title',
-    backgroundColor:'#fff'
+      title:'Maps',
+    url:'maps.js'
 });
 var tab_geo_overview = Titanium.UI.createTab({  
-    icon:'icons/KS_radar.png',
+    icon:'icons/radar.png',
     title:'Nearby',
     window:win_tab_geo_overview
 });
@@ -66,11 +68,13 @@ var tab_geo_overview = Titanium.UI.createTab({
 
 var win_tab_settings = Titanium.UI.createWindow({  
       title:'Profile',
-    url:'login_app.js',
-    backgroundColor:'#fff'
+    url:'settings.js',
+    color: '#fff',
+
+    layout:'vertical'
 });
 var tab_settings = Titanium.UI.createTab({  
-    icon:'icons/KS_settings.png',
+    icon:'icons/settings.png',
     title:'Profile',
     window:win_tab_settings
 });

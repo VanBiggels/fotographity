@@ -1,5 +1,8 @@
 var win = Titanium.UI.currentWindow;
 
+		win.barColor = '#000';
+
+
 
 
 // Back Button
@@ -9,7 +12,7 @@ var backBtn = Titanium.UI.createButton({
 });
  
 backBtn.addEventListener( 'click', function() {
-    webview.goBack();
+    win.close();
 });
  
 Ti.UI.currentWindow.setLeftNavButton(backBtn);
@@ -50,7 +53,7 @@ Titanium.Media.showCamera({
 		// set message
 		if (error.code == Titanium.Media.NO_CAMERA)
 		{
-			a.setMessage('Please run this test on device');
+			a.setMessage('No camera found');
 		}
 		else
 		{

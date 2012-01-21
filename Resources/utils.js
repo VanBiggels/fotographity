@@ -1,13 +1,8 @@
-
 //
 // Create main view
 //
 A2B.createView = function() {
 	// create map view
-	
-	
-	
-	
 	A2B.mapview = Titanium.Map.createView({
 		mapType: Titanium.Map.STANDARD_TYPE,
 		animate:true,
@@ -99,28 +94,26 @@ A2B.createView = function() {
 	locationView.add(A2B.cityCountryLabel);
 
 	// check-in button
-	
-// 	
-	// var checkInButton = Ti.UI.createButton({
-		// backgroundImage:'images/red_button_BG.png',
-		// height:31,
-		// width:100,
-		// color:'#fff',
-		// title:'Check-In',
-		// font: {
-			// fontSize:14,
-			// fontFamily:'Helvetica Neue',
-			// fontWeight:'bold'
-		// },
-		// right:10,
-		// top:20
-	// });
-	// locationView.add(checkInButton);
+	var checkInButton = Ti.UI.createButton({
+		backgroundImage:'images/red_button_BG.png',
+		height:31,
+		width:100,
+		color:'#fff',
+		title:'Check-In',
+		font: {
+			fontSize:14,
+			fontFamily:'Helvetica Neue',
+			fontWeight:'bold'
+		},
+		right:10,
+		top:20
+	});
+	locationView.add(checkInButton);
 	
 	// get current location and do a check-in
-	// checkInButton.addEventListener('click', function(){
-		// A2B.checkIn();
-	// });
+	checkInButton.addEventListener('click', function(){
+		A2B.checkIn();
+	});
 };
 
 //
@@ -275,11 +268,8 @@ A2B.getCheckIns = function(longitude, latitude, name) {
 //
 A2B.showCheckInDetail = function(){
 	var win = Ti.UI.createWindow({
-		backgroundColor:'#fff',
-	modal:true,title:'trol'
-
-		
-			});
+		backgroundColor:'#fff'
+	});
 	
 	// add top grey view
 	var topView = Ti.UI.createView({

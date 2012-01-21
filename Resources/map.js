@@ -14,12 +14,8 @@ A2B.checkInArray = [];
 
 // create window
 A2B.win = Ti.UI.createWindow({
-	backgroundColor:'#fff',
-	modal:true,
-	title:'Grafs nearby'
+	backgroundColor:'#fff'
 });
-
-
 
 // setup view and check into current location
 A2B.createView();

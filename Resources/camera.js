@@ -1,4 +1,15 @@
 var win = Titanium.UI.currentWindow;
+		win.barColor = '#000';
+
+
+
+
+Titanium.include('newNode.js');
+
+
+
+
+
 
 // used to evenly distribute items on the toolbar
 var flexSpace = Titanium.UI.createButton({
@@ -22,18 +33,6 @@ action.addEventListener('click', function()
 
 var camera = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.CAMERA
-});
-camera.addEventListener('click', function()
-{
-
-var eventWin = Ti.UI.createWindow({ 
-   url:'camera_basic.js', 
-   title:'Camera',
-   modal: true 
-}); 
-
-eventWin.open();
-
 });
 
 var compose = Titanium.UI.createButton({
@@ -151,10 +150,10 @@ cancel.addEventListener('click', function()
 var save = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.SAVE
 });
-save.addEventListener('click', function()
-{
-	Titanium.UI.createAlertDialog({title:'System Button', message:'SAVE'}).show();
-});
+// save.addEventListener('click', function()
+// {
+	// Titanium.UI.createAlertDialog({title:'System Button', message:'SAVE'}).show();
+// });
 
 var organize = Titanium.UI.createButton({
 	systemButton:Titanium.UI.iPhone.SystemButton.ORGANIZE
@@ -205,18 +204,93 @@ infolight.addEventListener('click', function()
 	Titanium.UI.createAlertDialog({title:'System Button', message:'INFO_LIGHT'}).show();
 });
 
-var infodark = Titanium.UI.createButton({
-	systemButton:Titanium.UI.iPhone.SystemButton.INFO_DARK
-});
-infodark.addEventListener('click', function()
-{
-	Titanium.UI.createAlertDialog({title:'System Button', message:'INFO_DARK'}).show();
-});
+
 
 //
 // CREATE BUTTONS TO CHANGE VIEW
 //
 
-	win.rightNavButton = camera;
-	win.toolbar = [flexSpace,fixedSpace,flexSpace,save];
+
+// Back Button
+var saveNode = Titanium.UI.createButton({
+   title:'Save',
+   style:Titanium.UI.iPhone.SystemButtonStyle.BORDERED
+});
+//  
+// saveNode.addEventListener( 'click', function() {
+//    
+// });
+ 
+Ti.UI.currentWindow.setRightNavButton(saveNode);
+
+
+
+	win.lefttNavButton = camera;
+	// win.toolbar = [flexSpace,fixedSpace,flexSpace,save];
+	camera.addEventListener('click', function()
+	{
+	var eventWin = Ti.UI.createWindow({ 
+	   url:'camera_basic.js', 
+	   title:'Camera',
+	   modal: true 
+	}); 
+	eventWin.open();	
+	});
+	
+	
+
+saveNode.addEventListener('click',function(e){
+  var xhr = Titanium.Network.createHTTPClient();
+  
+  xhr.onload = function()
+  {
+    //Just log the responseText for fun
+    Ti.API.info(this.responseText);
+    
+    //We translate the json string into a neat object
+    var response = JSON.parse(this.responseText);
+
+    // //We save a drupal 'cookie'
+    // var drupalCookie = response.session_name + '=' + response.sessid;
+    // Ti.App.drupalCookie = drupalCookie;
+    // //Titanium.App.Properties.setString('drupalCookie', drupalCookie);
+//     
+    //We make the interface happy
+    resultIcon.image = 'images/icon-check.png';
+    label.text = '';
+    //We make sure the keyboard is hidden
+    titleTF.blur();
+    storyTF.blur();
+  };
+  
+  xhr.onerror = function () 
+  {
+    Ti.API.info('Error posting node');
+    
+    //We clear the global variables (naughty)
+    Ti.App.drupalCookie = null;
+    
+    //We make the interface unhappy
+    resultIcon.image = 'images/icon-close.png';
+  };
+  
+  // open the client
+  xhr.open('POST','http://vanbiggels.be/mobile/api/node');
+  
+  // create the json string to send 
+  var nodeObject = {
+    type: "topic",
+    title: titleTF.value,
+    body:storyTF.value
+  }
+  var nodeString=JSON.stringify(nodeObject);
+  
+  // set the content-type header
+  xhr.setRequestHeader('content-type','application/json');
+  
+  // send the data
+  xhr.send(nodeString);
+});
+
+
 // action
