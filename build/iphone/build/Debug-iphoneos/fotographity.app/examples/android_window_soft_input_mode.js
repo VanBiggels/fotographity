@@ -1,1 +1,0 @@
-/Users/glenn/Dropbox/Titanium/fotographity/Resources/examples/android_window_soft_input_mode.js

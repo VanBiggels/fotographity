@@ -1,1 +1,0 @@
-/Users/glenn/Dropbox/Titanium/fotographity/Resources/examples/basic_animation.js
