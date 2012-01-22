@@ -223,9 +223,10 @@ var saveNode = Titanium.UI.createButton({
  
 Ti.UI.currentWindow.setRightNavButton(saveNode);
 
+Ti.UI.currentWindow.setLeftNavButton(camera);
 
 
-	win.lefttNavButton = camera;
+	// win.lefttNavButton = camera;
 	// win.toolbar = [flexSpace,fixedSpace,flexSpace,save];
 	camera.addEventListener('click', function()
 	{

@@ -40,12 +40,34 @@ var nodeTable = Ti.UI.createTableView({
     //Set row color - white
 });
 
+		nodeTable.addEventListener('click',function(e)
+		{
+			var w = Ti.UI.createWindow({title:node.title});
+			// var wb = Ti.UI.createWebView({url:node.uri});
+			var wb = Ti.UI.createView({url:node.uri});
+			w.add(wb);
+			var b = Titanium.UI.createButton({
+				title:'Close',
+				style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN
+			});
+			w.barColor = '#000';
+w.backgroundColor='#FFF';
+
+			w.setLeftNavButton(b);
+			b.addEventListener('click',function()
+			{
+				w.close();
+			});
+			w.open({modal:true});
+		});
+		
+		
 
 win2.add(label);
 win2.add(nodeTable);
 
 win2.addEventListener('focus',function(e){
-  if (Ti.App.drupalCookie) {
+  if (!Ti.App.drupalCookie) {
     label.visible = false;
     nodeTable.visible = true;
     refreshBtn.visible=true;
