@@ -186,6 +186,7 @@ logoutB.addEventListener('click',function(e){
   
   // send the data
   xhr.send(loginString);
+  drupalCookie = null;
 });
 
 

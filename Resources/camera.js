@@ -280,9 +280,17 @@ saveNode.addEventListener('click',function(e){
   
   // create the json string to send 
   var nodeObject = {
-    type: "topic",
-    title: titleTF.value,
-    body:storyTF.value
+    // type: "topic",
+    // title: titleTF.value,
+    // body:storyTF.value
+    
+"node":{
+"type":"topic",
+"title":titleTF.value,
+"language":"und",
+"body":{"und":{"0":{"value":storyTF.value}}}
+}
+
   }
   var nodeString=JSON.stringify(nodeObject);
   
@@ -290,7 +298,16 @@ saveNode.addEventListener('click',function(e){
   xhr.setRequestHeader('content-type','application/json');
   
   // send the data
-  xhr.send(nodeString);
+  if(    Ti.App.drupalCookie == null){
+  		Titanium.UI.createAlertDialog({title:'New topic', message:'Please login first'}).show();
+
+  }
+  else{
+  	  xhr.send(nodeString);
+	Titanium.UI.createAlertDialog({title:'New topic', message:'Your message has been posted successfully'}).show();
+
+  }
+
 });
 
 
