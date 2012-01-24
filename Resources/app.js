@@ -12,7 +12,7 @@ var tabGroup = Titanium.UI.createTabGroup();
 // create base UI tab and root window
 //
 var win_tab_list_overview = Titanium.UI.createWindow({  
-    title:'Graphs',
+    title:'Topics',
     // url:'map.js',
      url:'drupalFeed.js',
      color: '#fff',
@@ -52,7 +52,7 @@ var tab_foto_new = Titanium.UI.createTab({
 // create base UI tab and root window
 //
 var win_tab_geo_overview = Titanium.UI.createWindow({  
-      title:'Maps',
+      title:'Nearby',
     url:'maps.js'
 });
 var tab_geo_overview = Titanium.UI.createTab({  
