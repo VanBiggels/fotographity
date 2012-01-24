@@ -14,7 +14,7 @@ var tabGroup = Titanium.UI.createTabGroup();
 var win_tab_list_overview = Titanium.UI.createWindow({  
     title:'Topics',
     // url:'map.js',
-     url:'drupalFeed.js',
+     url:'windows/drupalFeed.js',
      color: '#fff',
      backgroundImage:'graphics/bg.png' ,
 	titleid:'mashups_win_title'
@@ -35,7 +35,7 @@ var tab_list_overview = Titanium.UI.createTab({
 
 var win_tab_foto_new = Titanium.UI.createWindow({  
     title:'New Topic',
-    url:'camera.js',
+    url:'windows/camera.js',
     color: '#fff',
 	titleid:'mashups_win_title',
     layout:'vertical'
@@ -53,7 +53,7 @@ var tab_foto_new = Titanium.UI.createTab({
 //
 var win_tab_geo_overview = Titanium.UI.createWindow({  
       title:'Nearby',
-    url:'maps.js'
+    url:'windows/maps.js'
 });
 var tab_geo_overview = Titanium.UI.createTab({  
     icon:'icons/radar.png',
@@ -68,7 +68,7 @@ var tab_geo_overview = Titanium.UI.createTab({
 
 var win_tab_settings = Titanium.UI.createWindow({  
       title:'Profile',
-    url:'settings.js',
+    url:'windows/settings.js',
     color: '#fff',
 
     layout:'vertical'
