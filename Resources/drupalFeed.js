@@ -149,11 +149,33 @@ var label2 = Titanium.UI.createLabel({
 	width:'auto'
 });
 
+// Create Search
+
+var search = Titanium.UI.createSearchBar({
+    barColor:'#000',
+    showCancel:false,
+    hintText:'search'
+});
+search.addEventListener('change', function(e)
+{
+e.value; // search string as user types
+});
+search.addEventListener('return', function(e)
+{
+search.blur();
+});
+search.addEventListener('cancel', function(e)
+{
+search.blur();
+});
+
 // create table view data object
 
 var nodeTable = Ti.UI.createTableView({
   height: '100%',
   width: '100%',
+  search:search,
+  searchHidden:true
 });
 
 //ADDING EVENTLISTENER TO ROW
