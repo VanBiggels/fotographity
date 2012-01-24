@@ -63,6 +63,22 @@ var resultIcon = Ti.UI.createImageView({
     image: 'images/icon-locked.png',
 });
 
+var info = Titanium.UI.createButton({
+	systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT
+	
+});
+info.addEventListener('click', function()
+{
+
+var eventWin =	Titanium.UI.createWindow({  
+		      title:'About',
+		    url:'about.js',
+		       modal: true 
+		});
+		eventWin.open();});
+
+win1.rightNavButton = info;
+
 win1.add(usernameTF);
 win1.add(passwordTF);
 win1.add(loginB);
