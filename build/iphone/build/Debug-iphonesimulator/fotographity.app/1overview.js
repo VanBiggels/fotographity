@@ -1,1 +1,0 @@
-/Users/glenn/Dropbox/Titanium/fotographity/Resources/1overview.js

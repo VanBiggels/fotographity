@@ -233,7 +233,7 @@ Ti.UI.currentWindow.setLeftNavButton(camera);
 	var eventWin = Ti.UI.createWindow({ 
 	   url:'camera_basic.js', 
 	   title:'Camera',
-	   modal: true 
+	   //modal: true 
 	}); 
 	eventWin.open();	
 	});

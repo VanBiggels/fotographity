@@ -31,11 +31,17 @@ Titanium.Media.showCamera({
 		if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO)
 		{
 			var imageView = Ti.UI.createImageView({
-				width:win.width,
-				height:win.height,
+				width:180,
+                borderRadius: 4,
+                borderWidth: 1,
+                left: 70,
+                top:205,
+                paddingBottom: 10,
+                height:180,
 				image:event.media
 			});
-			win.add(imageView);
+			
+            win.add(imageView);
 		}
 		else
 		{
@@ -65,5 +71,5 @@ Titanium.Media.showCamera({
 	},
 	saveToPhotoGallery:true,
 	allowEditing:true,
-	mediaTypes:[Ti.Media.MEDIA_TYPE_VIDEO,Ti.Media.MEDIA_TYPE_PHOTO]
+	mediaTypes:[Ti.Media.MEDIA_TYPE_PHOTO]
 });

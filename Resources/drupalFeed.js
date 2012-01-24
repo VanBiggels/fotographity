@@ -162,51 +162,51 @@ nodeTable.addEventListener('click',function(e)
   
           var w = Ti.UI.createWindow({
               title: this.title,
-              backgroundColor: '#fff',
-              
+              backgroundColor: '#fff'
               });
 			  
 			w.barColor = '#000';
 			w.color='#FFF';
 			w.setBackgroundImage('graphics/bg.png');
 			w.setBackgroundColor('transparent');
-
-          var i = Ti.UI.createImageView({
-              width:200,
-              height:200,
-              top:10,
-              left:10
+          
+          var d = Titanium.UI.createTextArea({
+             editable: false,
+             backgroundColor:'transparent',
+             color:'#FFF',
+             font:{fontSize:20,fontFamily:'Helvetica'},
+             left:25,
+             top:50,
+             height:295,
+             width : '85%' 
           });
           
-          var t = Ti.UI.createLabel({
-              left : 5,
-              top : 5,
-                            color:'#FFF',
-
-              width : '100%' 
-          });
-          
-          var d = Ti.UI.createLabel({
-             left : 5,
-             top : 10,
-                           color:'#FFF',
-
-             width : '100%' 
+          var u0 = Ti.UI.createLabel({
+             text:"Posted by",
+             left:20,
+             height:'auto',
+             top:18,
+             font:{fontSize:18},               
+             color:'#FFF',
+             width : '40%' 
           });
           
           var u = Ti.UI.createLabel({
-             left : 5,
-             top : 15,              color:'#FFF',
-
-             width : '100%' 
+             left:105,
+             height:'auto',
+             top:18, 
+             font:{fontSize:18,fontWeight:'bold'},            
+             color:'#FFF',
+             width : '40%' 
           });
           
           var com = Ti.UI.createLabel({
-             left : 5,
-             top : 20,
-                           color:'#FFF',
-
-             width : '100%' 
+             text:'(',
+             height:'auto',
+             right:20,
+             top:378,
+             color:'#FFF',
+             width : 'auto' 
           });
            
           var xhré = Ti.Network.createHTTPClient();
@@ -222,10 +222,9 @@ nodeTable.addEventListener('click',function(e)
                   var comments = doc.comment_count;
                   var title = doc.title;
       
-                  t.text=title;
-                  d.text=value2;
+                  d.value=value2;
                   u.text=user;
-                  com.text=comments;
+                  com.text=com.text+comments+' comments)';
                   
               }catch(E){
                   alert(E);
@@ -234,9 +233,8 @@ nodeTable.addEventListener('click',function(e)
           
           xhré.send();
 
-          w.add(i);
-          w.add(t);
           w.add(d);
+          w.add(u0);
           w.add(u);
           w.add(com);
 

@@ -9,13 +9,15 @@ var infoLabel = Titanium.UI.createLabel({
 });
 
 win.add(infoLabel);
+            
 var titleTF = Ti.UI.createTextField({
     top: 30,
     width: '90%',
     height: 30,
     hintText: 'Title',
     borderColor: '#888',
-        color:'#FFF',
+    color:'#FFF',
+    top:10,
     borderRadius: 4,
     borderWidth: 1,
     paddingLeft: 10,
@@ -23,6 +25,11 @@ var titleTF = Ti.UI.createTextField({
     autocaptalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
     autocorrect: false,
 });
+
+var imageView = Ti.UI.createImageView({
+});
+
+Ti.App.imageView=imageView;
 
 var storyTF = Titanium.UI.createTextArea({
 	editable: true,
@@ -60,10 +67,9 @@ var label = Titanium.UI.createLabel({
 });
 
 
-win.add(titleTF);
-// win.add(passwordTF);
-win.add(storyTF);
 win.add(label);
+win.add(titleTF);
+win.add(storyTF);
 win.add(resultIcon);
 
 // 
