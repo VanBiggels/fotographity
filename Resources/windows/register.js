@@ -1,5 +1,5 @@
 var win1 = Titanium.UI.currentWindow;
-win1.barColor = '#000';
+win1.barColor = '#383838';
 
 // Back Button
 var backBtn = Titanium.UI.createButton({

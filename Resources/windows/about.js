@@ -1,5 +1,5 @@
 var win1 = Titanium.UI.currentWindow;
-win1.barColor = '#000';
+win1.barColor = '#383838';
 win1.layout='vertical';
 win1.setBackgroundImage('../graphics/bg.png');
 win1.setBackgroundColor('transparent');

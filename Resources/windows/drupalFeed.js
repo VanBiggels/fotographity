@@ -123,7 +123,7 @@ Titanium.UI.setBackgroundColor('#000');
 // create controls tab and root window
 //
 var win2 = Titanium.UI.currentWindow;
-win2.barColor = '#000';
+win2.barColor = '#383838';
 win2.color='#FFF';
 
 win2.setBackgroundImage('../graphics/bg.png');
@@ -143,7 +143,7 @@ var label2 = Titanium.UI.createLabel({
 // Create Search
 
 var search = Titanium.UI.createSearchBar({
-    barColor:'#000',
+    barColor:'#383838',
     showCancel:false,
     hintText:'search'
 });
@@ -178,7 +178,7 @@ nodeTable.addEventListener('click',function(e)
               backgroundColor: '#fff'
               });
 			  
-			w.barColor = '#000';
+			w.barColor = '#383838';
 			w.color='#FFF';
 			w.setBackgroundImage('../graphics/bg.png');
 			w.setBackgroundColor('transparent');

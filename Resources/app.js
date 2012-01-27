@@ -89,7 +89,21 @@ tabGroup.addTab(tab_foto_new);
 tabGroup.addTab(tab_geo_overview);  
 tabGroup.addTab(tab_settings); 
 
-
-
+tabGroup.addEventListener('focus', function(e){
+    tabGroup._activeTab = e.tab
+    tabGroup._activeTabIndex = e.index
+    // if ( tabGroup._activeTabIndex == -1) return;
+    Ti.API.info(tabGroup._activeTabIndex);
+    Ti.API.info(tabGroup._activeTab.title);
+ 
+    // create property in Ti namespace
+    // Ti.API._activeTab = tabGroup._activeTab;
+    // Ti.API.info(Ti.API._activeTab.title);
+ 
+});
+function tabSwitch(){
+	tabGroup.setActiveTab(1);
+alert('lol');
+};
 // open tab group
 tabGroup.open();

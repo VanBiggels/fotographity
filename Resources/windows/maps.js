@@ -17,7 +17,7 @@ Ti.include('google_kml.js');
 // detailWindow.add(detailTableView);
 
 var win = Titanium.UI.currentWindow;
-win.barColor = '#000';
+win.barColor = '#383838';
 
 
 
@@ -40,7 +40,12 @@ win.barColor = '#000';
 
 var mapView = Titanium.Map.createView({
     mapType: Titanium.Map.STANDARD_TYPE,
-    
+    latitude:50.847573,
+			longitude:5.009766,
+			latitudeDelta:0.5,
+			longitudeDelta:0.5,
+			zoom:15,
+			   
     animate: true,
     regionFit: true
 });
@@ -53,16 +58,16 @@ win.addEventListener('focus',function(e){
 });
 
 
-
+// 
 	Titanium.Geolocation.getCurrentPosition(function(e)
 	{
-		// if (!e.success || e.error)
-		// {
-			// currentLocation.text = 'error: ' + JSON.stringify(e.error);
-			// Ti.API.info("Code translation: "+translateErrorCode(e.code));
-			// alert('error ' + JSON.stringify(e.error));
-			// return;
-		// }
+		if (!e.success || e.error)
+		{
+			currentLocation.text = 'error: ' + JSON.stringify(e.error);
+			Ti.API.info("Code translation: "+translateErrorCode(e.code));
+			alert('error ' + JSON.stringify(e.error));
+			return;
+		}
 
 		var longitude = e.coords.longitude;
 		var latitude = e.coords.latitude;
@@ -76,7 +81,7 @@ win.addEventListener('focus',function(e){
 			longitude:longitude,
 			latitudeDelta:0.5,
 			longitudeDelta:0.5,
-			zoom:1.5,
+			zoom:15,
 		};
 
 		// var altitudeAccuracy = e.coords.altitudeAccuracy;
