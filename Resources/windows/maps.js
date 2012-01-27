@@ -42,12 +42,13 @@ var mapView = Titanium.Map.createView({
     mapType: Titanium.Map.STANDARD_TYPE,
     latitude:50.847573,
 			longitude:5.009766,
-			latitudeDelta:0.5,
-			longitudeDelta:0.5,
+			latitudeDelta:0.005,
+            longitudeDelta:0.005,
 			zoom:15,
 			   
     animate: true,
-    regionFit: true
+    regionFit: true,
+    userLocation:true
 });
 
 win.add(mapView);
@@ -79,10 +80,16 @@ win.addEventListener('focus',function(e){
 		mapview.region = {
 			latitude:latitude,
 			longitude:longitude,
-			latitudeDelta:0.5,
-			longitudeDelta:0.5,
+			latitudeDelta:0.005,
+            longitudeDelta:0.005,
 			zoom:15,
 		};
+		mapview.location = {
+            latitudeDelta:0.005,
+            longitudeDelta:0.005,
+            zoom:15
+        };
+
 
 		// var altitudeAccuracy = e.coords.altitudeAccuracy;
 		// Ti.API.info('speed ' + speed);

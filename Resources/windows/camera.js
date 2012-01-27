@@ -230,12 +230,7 @@ Ti.UI.currentWindow.setLeftNavButton(camera);
 	// win.toolbar = [flexSpace,fixedSpace,flexSpace,save];
 	camera.addEventListener('click', function()
 	{
-	var eventWin = Ti.UI.createWindow({ 
-	   url:'camera_basic.js', 
-	   title:'Camera',
-	   //modal: true 
-	}); 
-	eventWin.open();	
+        putPhoto();
 	});
 	
 	

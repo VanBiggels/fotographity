@@ -1,5 +1,4 @@
 
-
 var infoLabel = Titanium.UI.createLabel({
 	color:'#003366',
 	text:'Please login',
@@ -26,11 +25,6 @@ var titleTF = Ti.UI.createTextField({
     autocorrect: false,
 });
 
-var imageView = Ti.UI.createImageView({
-});
-
-Ti.App.imageView=imageView;
-
 var storyTF = Titanium.UI.createTextArea({
 	editable: true,
 	font:{fontSize:20,fontFamily:'Marker Felt', fontWeight:'bold'},
@@ -50,7 +44,6 @@ var storyTF = Titanium.UI.createTextArea({
     autocorrect: false
 });
 
-
 var resultIcon = Ti.UI.createImageView({
     top: 15,
     width: 'auto',
@@ -66,11 +59,62 @@ var label = Titanium.UI.createLabel({
 	width:'auto'
 });
 
+var photo = Ti.UI.createImageView({
+    top:10,
+    width:200,
+    height:200
+})
+
 
 win.add(label);
 win.add(titleTF);
 win.add(storyTF);
-win.add(resultIcon);
+win.add(photo);
+
+function putPhoto (){
+  Titanium.Media.showCamera({
+
+    success:function(event)
+    {
+        var cropRect = event.cropRect;
+        var image = event.media;
+
+        Ti.API.debug('Our type was: '+event.mediaType);
+        if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO)
+        {
+            photo.image=image;
+        }
+        else
+        {
+            alert("got the wrong type back ="+event.mediaType);
+        }
+    },
+    cancel:function()
+    {
+    },
+    error:function(error)
+    {
+        // create alert
+        var a = Titanium.UI.createAlertDialog({title:'Camera'});
+
+        // set message
+        if (error.code == Titanium.Media.NO_CAMERA)
+        {
+            a.setMessage('No camera found');
+        }
+        else
+        {
+            a.setMessage('Unexpected error: ' + error.code);
+        }
+
+        // show alert
+        a.show();
+    },
+    saveToPhotoGallery:true,
+    allowEditing:true,
+    mediaTypes:[Ti.Media.MEDIA_TYPE_PHOTO]
+}); 
+};
 
 // 
 // 
