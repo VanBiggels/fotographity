@@ -1,4 +1,14 @@
 This is a school project, a  Appcelerator Titanium Mobile Project.
-Author: Billiau Glenn {"Vincent Van Grootel"}
-         
+Author collaboration: Glenn Billiau @billiauglenn & Vicent Van Grootel @vanbiggels
+
+This project has a Drupal 7 backend for users and nodes.
+
+Features:
+
+register a user to drupal - bugged: submitted password to drupal is incorrect, users can't loggin.
+login a user from drupal - due to bugged user reg, try defeault account: 'userfoo:passbar'
+mapview with current location - local nodes are no yet supported
+creat a new node + take a camera picture, uploading picture is not yet supported.
+view datalist from recent nodes + search
+detail view from selected node: view author, body and comment count.
 

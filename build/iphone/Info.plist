@@ -10,20 +10,8 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>appicon.png</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.fotographity</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fotographity</string>
-				
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.fotographity</string>
+	<string>com.appcelerator.titanium.ks</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -32,29 +20,42 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.appcelerator.kitchensink</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kitchensink</string>
+				<string>fb134793934930</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.1327695372</string>
+	<string>1.0</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-        <key>CFBundleIconFiles</key>
-        <array>
-	<string>appicon.png</string>
-</array>
-
-        <key>UISupportedInterfaceOrientations~ipad</key>
-        <array>
-	<string>UIInterfaceOrientationPortrait</string>
-	<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	<string>UIInterfaceOrientationLandscapeLeft</string>
-	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>comic_zine_ot.otf</string>
 	</array>
-        <key>UISupportedInterfaceOrientations</key>
-        <array>
-	<string>UIInterfaceOrientationPortrait</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
 	</array>
-        <key>UIStatusBarStyle</key>
-        <string>UIStatusBarStyleDefault</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 </dict>
 </plist>
